@@ -12,10 +12,11 @@ public class HashTable <K, V> {
 		this.size = 0;
 	}
 	
-	public int hashfun1 (String key) {
+	public int hashfun1 (K key) {
+		String key1 = key.toString();
 		int sum = 0;
-		for (int i = 0; i < key.length(); i++) {
-			sum = sum * 33 + (int)key.charAt(i);
+		for (int i = 0; i < key1.length(); i++) {
+			sum = sum * 33 + (int)key1.charAt(i);
 			sum = sum % this.size;
 		}
 		return sum;
